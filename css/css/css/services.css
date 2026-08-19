@@ -1,0 +1,188 @@
+/* =========================================================
+   FAEZAPROJECT V2
+   SERVICES
+   ========================================================= */
+
+.services-section {
+    background: var(--color-background-soft);
+}
+
+
+/* =========================================================
+   SERVICES GRID
+   ========================================================= */
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--space-6);
+}
+
+
+/* =========================================================
+   SERVICE CARD
+   ========================================================= */
+
+.service-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    padding: var(--space-7);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    background: var(--white);
+    box-shadow: var(--shadow-sm);
+    overflow: hidden;
+
+    transition:
+        transform var(--transition-normal),
+        box-shadow var(--transition-normal),
+        border-color var(--transition-normal);
+}
+
+
+.service-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--color-accent);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform var(--transition-normal);
+}
+
+
+.service-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(201, 162, 39, 0.45);
+    box-shadow: var(--shadow-md);
+}
+
+
+.service-card:hover::before {
+    transform: scaleX(1);
+}
+
+
+/* =========================================================
+   SERVICE ICON
+   ========================================================= */
+
+.service-icon {
+    width: 62px;
+    height: 62px;
+    display: grid;
+    place-items: center;
+    margin-bottom: var(--space-6);
+
+    border: 1px solid rgba(201, 162, 39, 0.25);
+    border-radius: var(--radius-sm);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(201, 162, 39, 0.16),
+            rgba(201, 162, 39, 0.05)
+        );
+
+    font-size: 1.7rem;
+}
+
+
+/* =========================================================
+   SERVICE CONTENT
+   ========================================================= */
+
+.service-card h3 {
+    margin-bottom: var(--space-3);
+    color: var(--color-primary);
+}
+
+
+.service-card p {
+    flex-grow: 1;
+    margin-bottom: var(--space-6);
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+}
+
+
+/* =========================================================
+   SERVICE LINK
+   ========================================================= */
+
+.service-card > a {
+    display: inline-flex;
+    align-items: center;
+    align-self: flex-start;
+    gap: 7px;
+
+    color: var(--color-accent-dark);
+
+    font-size: 0.9rem;
+    font-weight: 700;
+
+    transition:
+        color var(--transition-fast),
+        gap var(--transition-fast);
+}
+
+
+.service-card > a::after {
+    content: "→";
+}
+
+
+.service-card > a:hover {
+    color: var(--color-primary);
+    gap: 11px;
+}
+
+
+/* =========================================================
+   HOME & TECHNICAL SERVICE
+   ========================================================= */
+
+.service-card:last-child {
+    background:
+        linear-gradient(
+            145deg,
+            var(--white),
+            #fbfaf4
+        );
+}
+
+
+/* =========================================================
+   MOBILE / TABLET
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+    .services-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .service-card {
+        padding: var(--space-6);
+    }
+
+    .service-icon {
+        width: 56px;
+        height: 56px;
+    }
+
+  }
