@@ -1,0 +1,220 @@
+/* =========================================================
+   FAEZAPROJECT V2
+   BLOG DETAIL
+   ========================================================= */
+
+.blog-detail-hero {
+    padding:
+        150px 0
+        70px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--navy-900),
+            var(--navy-700)
+        );
+
+    color: var(--white);
+}
+
+
+.blog-back {
+    display: inline-block;
+
+    margin-bottom: 30px;
+
+    color: var(--color-accent-light);
+
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+
+.blog-detail-category {
+    margin-bottom: 15px;
+
+    color: var(--color-accent-light);
+
+    font-size: 0.8rem;
+    font-weight: 800;
+
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+
+.blog-detail-hero h1 {
+    max-width: 850px;
+
+    margin-bottom: 20px;
+
+    color: var(--white);
+
+    font-size:
+        clamp(
+            2rem,
+            5vw,
+            3.5rem
+        );
+
+    line-height: 1.15;
+}
+
+
+.blog-detail-meta {
+    color:
+        rgba(255, 255, 255, 0.72);
+
+    font-size: 0.9rem;
+}
+
+
+/* =========================================================
+   ARTICLE
+   ========================================================= */
+
+.blog-detail-container {
+    max-width: 900px;
+}
+
+
+.blog-detail-image {
+    width: 100%;
+
+    margin-bottom: 45px;
+
+    overflow: hidden;
+
+    border-radius: var(--radius-lg);
+
+    background: var(--gray-100);
+}
+
+
+.blog-detail-image img {
+    display: block;
+
+    width: 100%;
+    max-height: 520px;
+
+    object-fit: cover;
+}
+
+
+/* =========================================================
+   CONTENT
+   ========================================================= */
+
+.blog-detail-content {
+    max-width: 780px;
+
+    margin: 0 auto;
+}
+
+
+.blog-detail-content p {
+    margin-bottom: 22px;
+
+    font-size: 1.05rem;
+
+    line-height: 1.85;
+}
+
+
+.blog-detail-content h2 {
+    margin-top: 40px;
+    margin-bottom: 18px;
+}
+
+
+.blog-detail-content h3 {
+    margin-top: 30px;
+    margin-bottom: 14px;
+}
+
+
+.blog-detail-content ul,
+.blog-detail-content ol {
+    margin-bottom: 25px;
+    padding-left: 25px;
+}
+
+
+.blog-detail-content li {
+    margin-bottom: 10px;
+}
+
+
+/* =========================================================
+   CTA
+   ========================================================= */
+
+.blog-detail-cta {
+    max-width: 780px;
+
+    margin:
+        60px auto
+        0;
+
+    padding: 35px;
+
+    border:
+        1px solid
+        rgba(201, 162, 39, 0.35);
+
+    border-radius: var(--radius-lg);
+
+    background:
+        rgba(201, 162, 39, 0.08);
+
+    text-align: center;
+}
+
+
+.blog-detail-cta h2 {
+    margin-bottom: 10px;
+}
+
+
+.blog-detail-cta p {
+    margin-bottom: 22px;
+}
+
+
+/* =========================================================
+   BOTTOM
+   ========================================================= */
+
+.blog-detail-bottom {
+    margin-top: 40px;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .blog-detail-hero {
+        padding:
+            120px 0
+            50px;
+    }
+
+    .blog-detail-image {
+        border-radius: var(--radius-md);
+    }
+
+    .blog-detail-content p {
+        font-size: 1rem;
+    }
+
+    .blog-detail-cta {
+        padding: 25px 18px;
+    }
+
+  }
