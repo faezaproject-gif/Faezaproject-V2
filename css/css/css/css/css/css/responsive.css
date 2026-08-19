@@ -1,0 +1,223 @@
+/* =========================================================
+   FAEZAPROJECT V2
+   RESPONSIVE SYSTEM
+   Mobile • Tablet • Laptop • Desktop
+   ========================================================= */
+
+
+/* =========================================================
+   LARGE DESKTOP
+   ========================================================= */
+
+@media (min-width: 1400px) {
+
+    .container {
+        width: min(
+            calc(100% - 64px),
+            var(--container-max)
+        );
+    }
+
+    .hero-content {
+        padding-block: 120px;
+    }
+
+}
+
+
+/* =========================================================
+   LAPTOP
+   ========================================================= */
+
+@media (max-width: 1199px) {
+
+    .container {
+        width: min(
+            calc(100% - 40px),
+            var(--container-max)
+        );
+    }
+
+    .section {
+        padding-block: 72px;
+    }
+
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .container {
+        width: min(
+            calc(100% - 32px),
+            var(--container-max)
+        );
+    }
+
+    .section {
+        padding-block: 64px;
+    }
+
+    .section-heading {
+        margin-bottom: 40px;
+    }
+
+    .hero h1 {
+        max-width: 760px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL TABLET / LARGE MOBILE
+   ========================================================= */
+
+@media (max-width: 760px) {
+
+    html {
+        font-size: 15px;
+    }
+
+    .container {
+        width: calc(100% - 32px);
+    }
+
+    .section {
+        padding-block: 56px;
+    }
+
+    .section-heading {
+        margin-bottom: 32px;
+    }
+
+    .section-heading h2 {
+        font-size: 2rem;
+    }
+
+    .hero h1 {
+        font-size: clamp(
+            2.2rem,
+            10vw,
+            3.2rem
+        );
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .container {
+        width: calc(100% - 28px);
+    }
+
+    .section {
+        padding-block: 48px;
+    }
+
+    .section-heading {
+        margin-bottom: 28px;
+    }
+
+    .section-heading h2 {
+        font-size: 1.85rem;
+    }
+
+    .eyebrow {
+        font-size: 0.72rem;
+        letter-spacing: 0.13em;
+    }
+
+    .hero-content {
+        padding-block: 64px;
+    }
+
+    .hero h1 {
+        font-size: clamp(
+            2rem,
+            11vw,
+            2.8rem
+        );
+    }
+
+    .hero-description {
+        font-size: 0.96rem;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL PHONE
+   ========================================================= */
+
+@media (max-width: 420px) {
+
+    .container {
+        width: calc(100% - 24px);
+    }
+
+    .section {
+        padding-block: 42px;
+    }
+
+    .brand-name {
+        font-size: 1rem;
+    }
+
+    .brand-symbol {
+        width: 38px;
+        height: 38px;
+        font-size: 1.35rem;
+    }
+
+    .hero-content {
+        padding-block: 56px;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .service-card,
+    .process-card,
+    .blog-content {
+        padding: 20px;
+    }
+
+}
+
+
+/* =========================================================
+   VERY SMALL PHONE
+   ========================================================= */
+
+@media (max-width: 360px) {
+
+    html {
+        font-size: 14px;
+    }
+
+    .container {
+        width: calc(100% - 20px);
+    }
+
+    .hero h1 {
+        font-size: 1.85rem;
+    }
+
+    .hero-actions .btn {
+        min-height: 46px;
+        padding-inline: 16px;
+    }
+
+      }
