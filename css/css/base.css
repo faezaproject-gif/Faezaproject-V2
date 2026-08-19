@@ -1,0 +1,383 @@
+/* =========================================================
+   FAEZAPROJECT V2
+   BASE STYLES
+   ========================================================= */
+
+html {
+    font-size: 16px;
+}
+
+body {
+
+    font-family:
+        var(--font-body);
+
+    font-size:
+        16px;
+
+    line-height:
+        1.7;
+
+    color:
+        var(--color-text);
+
+    background:
+        var(--color-background);
+
+    -webkit-font-smoothing:
+        antialiased;
+
+    text-rendering:
+        optimizeLegibility;
+}
+
+
+/* =========================================================
+   CONTAINER
+   ========================================================= */
+
+.container {
+
+    width:
+        min(
+            calc(100% - 32px),
+            var(--container-max)
+        );
+
+    margin-inline:
+        auto;
+}
+
+
+/* =========================================================
+   HEADINGS
+   ========================================================= */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+
+    color:
+        var(--color-primary);
+
+    line-height:
+        1.2;
+
+}
+
+
+h1,
+h2 {
+
+    font-family:
+        var(--font-heading);
+
+}
+
+
+h1 {
+
+    font-size:
+        clamp(
+            2.4rem,
+            6vw,
+            4.8rem
+        );
+
+}
+
+
+h2 {
+
+    font-size:
+        clamp(
+            2rem,
+            4vw,
+            3.2rem
+        );
+
+}
+
+
+h3 {
+
+    font-size:
+        1.25rem;
+
+}
+
+
+/* =========================================================
+   PARAGRAPH
+   ========================================================= */
+
+p {
+
+    color:
+        var(--color-text-muted);
+
+}
+
+
+/* =========================================================
+   SECTION
+   ========================================================= */
+
+.section {
+
+    padding-block:
+        var(--space-12);
+
+}
+
+
+/* =========================================================
+   SECTION HEADING
+   ========================================================= */
+
+.section-heading {
+
+    max-width:
+        720px;
+
+    margin-bottom:
+        var(--space-9);
+
+}
+
+
+.section-heading h2 {
+
+    margin-bottom:
+        var(--space-4);
+
+}
+
+
+.section-heading p {
+
+    max-width:
+        650px;
+
+}
+
+
+/* =========================================================
+   EYEBROW
+   ========================================================= */
+
+.eyebrow {
+
+    display:
+        inline-block;
+
+    margin-bottom:
+        var(--space-3);
+
+    color:
+        var(--color-accent-dark);
+
+    font-size:
+        0.78rem;
+
+    font-weight:
+        700;
+
+    letter-spacing:
+        0.16em;
+
+    text-transform:
+        uppercase;
+
+}
+
+
+/* =========================================================
+   BUTTON SYSTEM
+   ========================================================= */
+
+.btn {
+
+    min-height:
+        48px;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    gap:
+        var(--space-2);
+
+    padding:
+        12px 22px;
+
+    border-radius:
+        var(--radius-pill);
+
+    font-size:
+        0.95rem;
+
+    font-weight:
+        700;
+
+    transition:
+        transform var(--transition-normal),
+        background var(--transition-normal),
+        color var(--transition-normal),
+        box-shadow var(--transition-normal);
+
+}
+
+
+.btn:hover {
+
+    transform:
+        translateY(-2px);
+
+}
+
+
+.btn:active {
+
+    transform:
+        translateY(0);
+
+}
+
+
+/* PRIMARY */
+
+.btn-primary {
+
+    background:
+        var(--color-accent);
+
+    color:
+        var(--navy-900);
+
+    box-shadow:
+        var(--shadow-sm);
+
+}
+
+
+.btn-primary:hover {
+
+    background:
+        var(--color-accent-light);
+
+    box-shadow:
+        var(--shadow-md);
+
+}
+
+
+/* SECONDARY */
+
+.btn-secondary {
+
+    border:
+        1px solid
+        var(--color-border);
+
+    background:
+        var(--white);
+
+    color:
+        var(--color-primary);
+
+}
+
+
+.btn-secondary:hover {
+
+    border-color:
+        var(--color-accent);
+
+}
+
+
+/* WHATSAPP */
+
+.btn-whatsapp {
+
+    background:
+        var(--color-accent);
+
+    color:
+        var(--navy-900);
+
+}
+
+
+/* =========================================================
+   FOCUS
+   ========================================================= */
+
+:focus-visible {
+
+    outline:
+        3px solid
+        var(--color-accent-light);
+
+    outline-offset:
+        3px;
+
+}
+
+
+/* =========================================================
+   SELECTION
+   ========================================================= */
+
+::selection {
+
+    background:
+        var(--color-accent);
+
+    color:
+        var(--navy-900);
+
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+
+        scroll-behavior:
+            auto;
+
+    }
+
+    *,
+    *::before,
+    *::after {
+
+        animation-duration:
+            0.01ms !important;
+
+        animation-iteration-count:
+            1 !important;
+
+        transition-duration:
+            0.01ms !important;
+
+        scroll-behavior:
+            auto !important;
+
+    }
+
+  }
