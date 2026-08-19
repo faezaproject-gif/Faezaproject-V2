@@ -1,58 +1,91 @@
 /* =========================================================
-   FAEZAPROJECT V2
+   FAEZAPROJECT
    BLOG DETAIL
+   ========================================================= */
+
+
+/* =========================================================
+   PAGE
    ========================================================= */
 
 .blog-detail-page {
     background: #f8f9fb;
+    min-height: 100vh;
 }
 
 
 /* =========================================================
-   ARTICLE HEADER
+   HERO
    ========================================================= */
 
-.blog-detail-header {
-    padding: 140px 20px 50px;
+.blog-detail-hero {
+    padding: 150px 20px 55px;
     text-align: center;
+    background:
+        linear-gradient(
+            180deg,
+            #ffffff 0%,
+            #f8f9fb 100%
+        );
 }
 
-.blog-detail-header .container {
+.blog-detail-hero .container {
     max-width: 900px;
     margin: 0 auto;
 }
 
-.blog-detail-category {
+
+/* =========================================================
+   CATEGORY
+   ========================================================= */
+
+#article-category {
     display: inline-block;
-    margin-bottom: 14px;
-    padding: 7px 14px;
+
+    margin-bottom: 16px;
+    padding: 7px 15px;
 
     border: 1px solid #c9a227;
     border-radius: 999px;
 
-    color: #a17b00;
     background: #fffdf5;
+    color: #a17b00;
 
     font-size: 0.78rem;
     font-weight: 700;
+
     letter-spacing: 0.08em;
     text-transform: uppercase;
 }
 
+
+/* =========================================================
+   TITLE
+   ========================================================= */
+
 #article-title {
-    margin: 0 auto 18px;
+    margin: 0 auto 16px;
+
+    max-width: 850px;
 
     color: #0b1f3a;
 
-    font-size: clamp(
-        2rem,
-        5vw,
-        3.4rem
-    );
+    font-size:
+        clamp(
+            2rem,
+            5vw,
+            3.4rem
+        );
 
     line-height: 1.15;
+
     font-weight: 700;
 }
+
+
+/* =========================================================
+   DATE
+   ========================================================= */
 
 #article-date {
     display: block;
@@ -64,18 +97,20 @@
 
 
 /* =========================================================
-   FEATURE IMAGE
+   IMAGE
    ========================================================= */
 
-.blog-detail-image-wrapper {
+.blog-detail-image {
     width: 100%;
     max-width: 1100px;
 
-    margin: 0 auto 55px;
+    margin: 0 auto;
 
-    padding: 0 20px;
+    padding:
+        0 20px 55px;
 }
 
+.blog-detail-image img,
 #article-image {
     display: block;
 
@@ -90,19 +125,26 @@
 
     box-shadow:
         0 18px 45px
-        rgba(11, 31, 58, 0.12);
+        rgba(
+            11,
+            31,
+            58,
+            0.12
+        );
 }
 
 
 /* =========================================================
-   ARTICLE CONTENT
+   ARTICLE SECTION
    ========================================================= */
 
-.blog-detail-content {
-    padding: 0 20px 90px;
+.blog-detail-section {
+    padding:
+        0 20px 80px;
 }
 
-#article-content {
+.blog-detail-content {
+    width: 100%;
     max-width: 800px;
 
     margin: 0 auto;
@@ -110,33 +152,41 @@
     color: #333;
 
     font-size: 1.05rem;
-
     line-height: 1.9;
 }
 
 
-/* INTRO */
+/* =========================================================
+   INTRO
+   ========================================================= */
 
-#article-content .article-intro {
-    margin-bottom: 35px;
+.blog-detail-content .article-intro {
+    margin:
+        0 0 35px;
 
     color: #182b42;
 
     font-size: 1.2rem;
+    line-height: 1.8;
+
     font-weight: 500;
 }
 
 
-/* SECTION */
+/* =========================================================
+   ARTICLE SECTIONS
+   ========================================================= */
 
-#article-content .article-section {
+.blog-detail-content .article-section {
     margin-bottom: 42px;
 }
 
 
-/* HEADING */
+/* =========================================================
+   H2
+   ========================================================= */
 
-#article-content h2 {
+.blog-detail-content h2 {
     margin:
         0 0 16px;
 
@@ -145,47 +195,69 @@
     font-size: 1.55rem;
 
     line-height: 1.35;
+
+    font-weight: 700;
 }
 
 
-/* PARAGRAPH */
+/* =========================================================
+   PARAGRAPH
+   ========================================================= */
 
-#article-content p {
+.blog-detail-content p {
     margin:
         0 0 18px;
 }
 
 
 /* =========================================================
-   ARTICLE ACTION
+   CTA
    ========================================================= */
 
-.blog-detail-actions {
+.blog-detail-cta {
     max-width: 800px;
 
-    margin: 20px auto 0;
+    margin:
+        25px auto 0;
 
-    padding: 25px 20px;
+    padding:
+        28px 0 0;
 
     border-top:
         1px solid #e5e5e5;
 
     display: flex;
 
+    align-items: center;
+
     justify-content:
         space-between;
 
-    align-items: center;
-
-    gap: 15px;
+    gap: 16px;
 }
 
+
+/* =========================================================
+   BACK BUTTON
+   ========================================================= */
+
 .blog-back-link {
+    display: inline-flex;
+
+    align-items: center;
+
+    min-height: 44px;
+
     color: #0b1f3a;
+
+    font-size: 0.95rem;
 
     font-weight: 600;
 
     text-decoration: none;
+
+    transition:
+        color 0.2s ease;
 }
 
 .blog-back-link:hover {
@@ -194,10 +266,10 @@
 
 
 /* =========================================================
-   WHATSAPP
+   WHATSAPP BUTTON
    ========================================================= */
 
-.blog-detail-whatsapp {
+#article-whatsapp {
     display: inline-flex;
 
     align-items: center;
@@ -223,13 +295,18 @@
         box-shadow 0.2s ease;
 }
 
-.blog-detail-whatsapp:hover {
+#article-whatsapp:hover {
     transform:
         translateY(-2px);
 
     box-shadow:
         0 8px 20px
-        rgba(0, 0, 0, 0.12);
+        rgba(
+            0,
+            0,
+            0,
+            0.12
+        );
 }
 
 
@@ -241,9 +318,18 @@
     max-width: 768px
 ) {
 
-    .blog-detail-header {
+    .blog-detail-hero {
         padding:
-            110px 18px 35px;
+            115px 18px 38px;
+    }
+
+
+    #article-category {
+        font-size:
+            0.72rem;
+
+        padding:
+            6px 12px;
     }
 
 
@@ -254,18 +340,25 @@
                 8vw,
                 2.5rem
             );
+
+        line-height:
+            1.2;
     }
 
 
-    .blog-detail-image-wrapper {
+    #article-date {
+        font-size:
+            0.82rem;
+    }
+
+
+    .blog-detail-image {
         padding:
-            0 14px;
-
-        margin-bottom:
-            38px;
+            0 14px 38px;
     }
 
 
+    .blog-detail-image img,
     #article-image {
         max-height:
             420px;
@@ -275,13 +368,13 @@
     }
 
 
-    .blog-detail-content {
+    .blog-detail-section {
         padding:
             0 18px 60px;
     }
 
 
-    #article-content {
+    .blog-detail-content {
         font-size:
             1rem;
 
@@ -290,19 +383,25 @@
     }
 
 
-    #article-content h2 {
-        font-size:
-            1.35rem;
-    }
-
-
-    #article-content .article-intro {
+    .blog-detail-content .article-intro {
         font-size:
             1.08rem;
+
+        line-height:
+            1.75;
     }
 
 
-    .blog-detail-actions {
+    .blog-detail-content h2 {
+        font-size:
+            1.35rem;
+
+        line-height:
+            1.4;
+    }
+
+
+    .blog-detail-cta {
         flex-direction:
             column;
 
@@ -314,9 +413,64 @@
     }
 
 
-    .blog-detail-whatsapp {
+    .blog-back-link {
+        justify-content:
+            center;
+    }
+
+
+    #article-whatsapp {
         width:
             100%;
     }
 
-      }
+}
+
+
+/* =========================================================
+   SMALL PHONE
+   ========================================================= */
+
+@media (
+    max-width: 480px
+) {
+
+    .blog-detail-hero {
+        padding:
+            105px 16px 32px;
+    }
+
+
+    #article-title {
+        font-size:
+            1.8rem;
+    }
+
+
+    .blog-detail-image {
+        padding:
+            0 10px 32px;
+    }
+
+
+    .blog-detail-image img,
+    #article-image {
+        border-radius:
+            12px;
+    }
+
+
+    .blog-detail-section {
+        padding:
+            0 16px 50px;
+    }
+
+
+    .blog-detail-content h2 {
+        font-size:
+            1.25rem;
+    }
+
+   }
+
+            
