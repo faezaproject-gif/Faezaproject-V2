@@ -13,7 +13,7 @@ const FAEZA_BLOGS = [
         image: "assets/blog/publish/panduan-lengkap-umroh.jpg",
         excerpt:
             "Panduan dasar untuk mempersiapkan perjalanan Umroh dengan lebih tenang dan terencana.",
-        url: "#"
+        
     },
 
     {
@@ -24,7 +24,7 @@ const FAEZA_BLOGS = [
         image: "assets/blog/publish/tips-memilih-jasa.jpg",
         excerpt:
             "Hal-hal penting yang perlu diperhatikan sebelum memilih penyedia jasa untuk kebutuhan Anda.",
-        url: "#"
+        
     },
 
     {
@@ -35,7 +35,7 @@ const FAEZA_BLOGS = [
         image: "assets/blog/publish/inspirasi-project.jpg",
         excerpt:
             "Berbagai inspirasi project dan solusi yang dapat dikembangkan bersama FaezaProject.",
-        url: "#"
+        
     },
 
     {
@@ -46,7 +46,7 @@ const FAEZA_BLOGS = [
         image: "assets/blog/publish/cara-cek-travel.jpg",
         excerpt:
             "Panduan dasar untuk mengetahui legalitas dan kredibilitas travel Umroh sebelum memilih layanan.",
-        url: "#"
+        
     },
 
     {
@@ -57,7 +57,7 @@ const FAEZA_BLOGS = [
         image: "assets/blog/publish/vaksin-wajib-umroh.jpg",
         excerpt:
             "Informasi persiapan kesehatan dan dokumen vaksinasi yang perlu diperhatikan sebelum perjalanan Umroh.",
-        url: "#"
+        
     },
 
     {
@@ -68,7 +68,7 @@ const FAEZA_BLOGS = [
         image: "assets/blog/publish/memilih-hotel-umroh.jpg",
         excerpt:
             "Hal-hal yang perlu diperhatikan ketika memilih lokasi dan fasilitas hotel untuk perjalanan Umroh.",
-        url: "#"
+        
     },
 
     {
@@ -79,7 +79,7 @@ const FAEZA_BLOGS = [
         image: "assets/blog/publish/umroh-ramadhan.jpg",
         excerpt:
             "Persiapan khusus yang dapat membantu jamaah menjalani ibadah Umroh di bulan Ramadhan dengan lebih baik.",
-        url: "#"
+        
     },
 
     {
@@ -90,7 +90,7 @@ const FAEZA_BLOGS = [
         image: "assets/blog/publish/vaksin-meningitis.jpg",
         excerpt:
             "Informasi umum mengenai vaksinasi meningitis dan hal yang perlu diperhatikan jamaah sebelum keberangkatan.",
-        url: "#"
+        
     },
 
     {
@@ -101,7 +101,7 @@ const FAEZA_BLOGS = [
         image: "assets/blog/publish/berapa-lama-waktu-umroh.jpg",
         excerpt:
             "Gambaran mengenai durasi perjalanan Umroh dan faktor yang dapat memengaruhi lama perjalanan.",
-        url: "#"
+        
     },
 
     {
@@ -112,7 +112,7 @@ const FAEZA_BLOGS = [
         image: "assets/blog/publish/umroh-akhir-ramadhan.jpg",
         excerpt:
             "Hal-hal yang perlu dipersiapkan bagi jamaah yang merencanakan Umroh pada akhir bulan Ramadhan.",
-        url: "#"
+        
     },
 
     {
@@ -123,7 +123,7 @@ const FAEZA_BLOGS = [
         image: "assets/blog/publish/tips-memilih-jasa-project.jpg",
         excerpt:
             "Panduan sederhana untuk memilih tenaga dan penyedia jasa yang sesuai dengan kebutuhan project.",
-        url: "#"
+        
     }
 
 ];
