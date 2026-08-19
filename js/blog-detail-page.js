@@ -170,14 +170,67 @@
                 blog.title +
                 " | FaezaProject";
 
+/*
+ * ARTICLE CONTENT
+ */
 
-            /*
-             * Untuk sementara isi artikel
-             * menggunakan excerpt.
-             *
-             * Nanti kita upgrade menjadi
-             * artikel lengkap.
-             */
+const articleContent =
+    FAEZA_BLOG_CONTENT[blog.id];
+
+
+if (articleContent) {
+
+    let html = `
+        <p class="article-intro">
+            ${articleContent.intro}
+        </p>
+    `;
+
+
+    articleContent.sections.forEach(
+        function (section) {
+
+            html += `
+                <section class="article-section">
+
+                    <h2>
+                        ${section.title}
+                    </h2>
+            `;
+
+
+            section.paragraphs.forEach(
+                function (paragraph) {
+
+                    html += `
+                        <p>
+                            ${paragraph}
+                        </p>
+                    `;
+
+                }
+            );
+
+
+            html += `
+                </section>
+            `;
+
+        }
+    );
+
+
+    content.innerHTML = html;
+
+} else {
+
+    content.innerHTML = `
+        <p>
+            ${blog.excerpt}
+        </p>
+    `;
+
+}
 
             content.innerHTML = `
 
