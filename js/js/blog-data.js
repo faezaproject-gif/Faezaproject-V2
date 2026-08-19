@@ -36,6 +36,17 @@ const FAEZA_BLOGS = [
         excerpt:
             "Berbagai inspirasi project dan solusi yang dapat dikembangkan bersama FaezaProject.",
         url: "#"
+    },
+
+    {
+        id: "cara-cek-travel",
+        title: "Cara Cek Legalitas Travel Umroh",
+        category: "Umroh",
+        date: "2026-08-20",
+        image: "assets/blog/publish/cara-cek-travel.jpg",
+        excerpt:
+            "Panduan dasar untuk mengetahui legalitas dan kredibilitas travel Umroh sebelum memilih layanan.",
+        url: "#"
     }
 
 ];
