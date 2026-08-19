@@ -1,0 +1,147 @@
+/* =========================================================
+   FAEZAPROJECT V2
+   HERO
+   ========================================================= */
+
+.hero {
+    position: relative;
+    min-height: min(760px, 90vh);
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    isolation: isolate;
+    background:
+        radial-gradient(
+            circle at 85% 20%,
+            rgba(201, 162, 39, 0.18),
+            transparent 28%
+        ),
+        linear-gradient(
+            135deg,
+            var(--navy-900),
+            var(--navy-800)
+        );
+}
+
+
+/* =========================================================
+   DECORATION
+   ========================================================= */
+
+.hero::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    width: 420px;
+    height: 420px;
+    right: -210px;
+    bottom: -210px;
+    border: 1px solid rgba(224, 196, 92, 0.22);
+    border-radius: 50%;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    width: 220px;
+    height: 220px;
+    right: 12%;
+    top: 12%;
+    border: 1px solid rgba(224, 196, 92, 0.10);
+    border-radius: 50%;
+}
+
+
+/* =========================================================
+   CONTENT
+   ========================================================= */
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    padding-block: var(--space-12);
+}
+
+.hero .eyebrow {
+    color: var(--color-accent-light);
+}
+
+.hero h1 {
+    max-width: 900px;
+    margin-bottom: var(--space-6);
+    color: var(--white);
+}
+
+.hero h1 span {
+    display: block;
+    color: var(--color-accent-light);
+}
+
+.hero-description {
+    max-width: 650px;
+    margin-bottom: var(--space-7);
+    color: rgba(255, 255, 255, 0.78);
+    font-size: 1.08rem;
+}
+
+
+/* =========================================================
+   HERO ACTIONS
+   ========================================================= */
+
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+}
+
+.hero .btn-primary {
+    background: var(--color-accent);
+    color: var(--navy-900);
+}
+
+.hero .btn-primary:hover {
+    background: var(--color-accent-light);
+}
+
+.hero .btn-secondary {
+    border-color: rgba(255, 255, 255, 0.35);
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--white);
+}
+
+.hero .btn-secondary:hover {
+    border-color: var(--color-accent);
+    background: rgba(255, 255, 255, 0.10);
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 760px) {
+
+    .hero {
+        min-height: auto;
+    }
+
+    .hero-content {
+        padding-block: 80px;
+    }
+
+    .hero-description {
+        font-size: 1rem;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .hero-actions .btn {
+        width: 100%;
+    }
+
+  }
