@@ -1,0 +1,128 @@
+/* =========================================================
+   FAEZAPROJECT V2
+   FOOTER
+   ========================================================= */
+
+.site-footer {
+    background: var(--navy-900);
+    color: rgba(255, 255, 255, 0.70);
+}
+
+
+/* =========================================================
+   FOOTER GRID
+   ========================================================= */
+
+.footer-grid {
+    display: grid;
+
+    grid-template-columns:
+        1.5fr
+        repeat(3, minmax(0, 1fr));
+
+    gap: var(--space-8);
+
+    padding-block: var(--space-10);
+}
+
+
+/* =========================================================
+   FOOTER BRAND
+   ========================================================= */
+
+.footer-brand .brand-name {
+    color: var(--white);
+}
+
+.footer-brand p {
+    max-width: 280px;
+    margin-top: var(--space-5);
+
+    color: rgba(255, 255, 255, 0.60);
+}
+
+
+/* =========================================================
+   FOOTER COLUMN
+   ========================================================= */
+
+.footer-column {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+}
+
+.footer-column h3 {
+    margin-bottom: var(--space-3);
+
+    color: var(--color-accent-light);
+
+    font-size: 1rem;
+}
+
+.footer-column a {
+    color: rgba(255, 255, 255, 0.65);
+
+    font-size: 0.9rem;
+
+    transition:
+        color var(--transition-fast),
+        transform var(--transition-fast);
+}
+
+.footer-column a:hover {
+    color: var(--color-accent-light);
+    transform: translateX(3px);
+}
+
+
+/* =========================================================
+   FOOTER BOTTOM
+   ========================================================= */
+
+.footer-bottom {
+    border-top:
+        1px solid
+        rgba(255, 255, 255, 0.08);
+}
+
+.footer-bottom .container {
+    padding-block: var(--space-4);
+}
+
+.footer-bottom p {
+    margin: 0;
+
+    color: rgba(255, 255, 255, 0.45);
+
+    font-size: 0.82rem;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 850px) {
+
+    .footer-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+@media (max-width: 550px) {
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-7);
+    }
+
+    .footer-brand p {
+        max-width: none;
+    }
+
+}
