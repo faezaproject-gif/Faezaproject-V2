@@ -282,7 +282,7 @@ const FAEZA_BLOG_CONTENT = {
 
         ]
 
-    }
+    },
 
    "memilih-jasa": {
 
