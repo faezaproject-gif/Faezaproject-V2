@@ -246,21 +246,22 @@
                  * Link
                  */
 
-                const link =
-                    document.createElement(
-                        "a"
-                    );
+                const link = document.createElement("a");
 
+link.href =
+    "blog-detail.html?id=" +
+    encodeURIComponent(blog.id);
 
-                link.href =
-                    "blog-detail.html?id=" +
-                    encodeURIComponent(
-                        blog.id
-                    );
+link.className =
+    "blog-read-more";
 
+link.textContent =
+    "Baca selengkapnya";
 
-                link.textContent =
-                    "Baca selengkapnya";
+link.setAttribute(
+    "aria-label",
+    "Baca selengkapnya: " + blog.title
+);
 
 
                 /*
