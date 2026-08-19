@@ -69,18 +69,43 @@ const FAEZA_SERVICES = [
     },
 
     {
-        id: "technical",
-        title: "Home & Technical Services",
-        icon: "🏠",
-        description:
-            "Solusi pekerjaan rumah dan teknis dengan tenaga yang sesuai kebutuhan.",
+    id: "technical",
+    title: "Home & Technical Services",
+    icon: "🏠",
+    description:
+        "Solusi pekerjaan rumah dan teknis dengan tenaga yang sesuai kebutuhan.",
 
-        items: [
-            "Instalasi Listrik",
-            "Tukang Bangunan",
-            "Tukang AC",
-            "Tukang Las"
-        ]
+    items: [
+        {
+            id: "listrik",
+            title: "Instalasi Listrik",
+            icon: "⚡",
+            description:
+                "Pemasangan, perbaikan, dan penataan instalasi listrik rumah maupun kebutuhan usaha."
+        },
+
+        {
+            id: "bangunan",
+            title: "Tukang Bangunan",
+            icon: "🏗️",
+            description:
+                "Pekerjaan renovasi, perbaikan, pembangunan, dan berbagai kebutuhan konstruksi."
+        },
+
+        {
+            id: "ac",
+            title: "Tukang AC",
+            icon: "❄️",
+            description:
+                "Pemasangan, perawatan, pembersihan, dan perbaikan AC."
+        },
+
+        {
+            id: "las",
+            title: "Tukang Las",
+            icon: "🔥",
+            description:
+                "Pekerjaan pengelasan untuk kebutuhan rumah, usaha, pagar, kanopi, dan konstruksi."
+        }
+    ]
     }
-
-];
