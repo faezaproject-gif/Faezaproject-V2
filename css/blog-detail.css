@@ -218,3 +218,20 @@
     }
 
   }
+
+/* =========================================================
+   ARTICLE CONTENT
+   ========================================================= */
+
+.article-intro {
+    font-size: 1.15rem !important;
+    font-weight: 600;
+}
+
+.article-section {
+    margin-bottom: 35px;
+}
+
+.article-section h2 {
+    margin-top: 0;
+   }
