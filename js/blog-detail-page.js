@@ -7,17 +7,14 @@
 
     "use strict";
 
-
     document.addEventListener(
         "DOMContentLoaded",
         function () {
-
 
             const params =
                 new URLSearchParams(
                     window.location.search
                 );
-
 
             const blogId =
                 params.get("id");
@@ -55,30 +52,62 @@
 
 
             /*
-             * Jika tidak ada ID
+             * ELEMENT TIDAK LENGKAP
              */
 
-            if (!blogId) {
+            if (
+                !title ||
+                !category ||
+                !date ||
+                !image ||
+                !content
+            ) {
 
-                title.textContent =
-                    "Artikel tidak ditemukan";
-
-                category.textContent =
-                    "Blog";
-
-                content.innerHTML = `
-                    <p>
-                        Artikel yang Anda cari
-                        belum tersedia.
-                    </p>
-                `;
+                console.error(
+                    "Element blog detail tidak lengkap."
+                );
 
                 return;
             }
 
 
             /*
-             * Cari artikel
+             * ID ARTIKEL TIDAK ADA
+             */
+
+            if (!blogId) {
+
+                showError(
+                    "Artikel tidak ditemukan."
+                );
+
+                return;
+            }
+
+
+            /*
+             * DATA BLOG BELUM TERSEDIA
+             */
+
+            if (
+                typeof FAEZA_BLOGS ===
+                "undefined"
+            ) {
+
+                showError(
+                    "Data artikel belum tersedia."
+                );
+
+                console.error(
+                    "FAEZA_BLOGS tidak ditemukan."
+                );
+
+                return;
+            }
+
+
+            /*
+             * CARI ARTIKEL
              */
 
             const blog =
@@ -95,42 +124,43 @@
 
 
             /*
-             * Artikel tidak ditemukan
+             * ARTIKEL TIDAK DITEMUKAN
              */
 
             if (!blog) {
 
-                title.textContent =
-                    "Artikel tidak ditemukan";
-
-                category.textContent =
-                    "Blog";
-
-                content.innerHTML = `
-                    <p>
-                        Maaf, artikel tersebut
-                        belum tersedia.
-                    </p>
-                `;
+                showError(
+                    "Artikel yang Anda cari tidak tersedia."
+                );
 
                 return;
             }
 
 
             /*
-             * Isi informasi artikel
+             * JUDUL
              */
 
             title.textContent =
                 blog.title;
 
+
+            /*
+             * KATEGORI
+             */
+
             category.textContent =
                 blog.category;
 
 
+            /*
+             * TANGGAL
+             */
+
             const formattedDate =
                 new Date(
-                    blog.date
+                    blog.date +
+                    "T00:00:00"
                 ).toLocaleDateString(
                     "id-ID",
                     {
@@ -145,6 +175,10 @@
                 formattedDate;
 
 
+            /*
+             * GAMBAR
+             */
+
             image.src =
                 blog.image;
 
@@ -153,7 +187,22 @@
 
 
             /*
-             * SEO description
+             * ERROR GAMBAR
+             */
+
+            image.addEventListener(
+                "error",
+                function () {
+
+                    image.style.display =
+                        "none";
+
+                }
+            );
+
+
+            /*
+             * SEO DESCRIPTION
              */
 
             if (description) {
@@ -166,71 +215,45 @@
             }
 
 
+            /*
+             * TITLE BROWSER
+             */
+
             document.title =
                 blog.title +
                 " | FaezaProject";
 
-/*
- * ARTICLE CONTENT
- */
 
-const articleContent =
-    FAEZA_BLOG_CONTENT[blog.id];
+            /*
+             * ISI ARTIKEL
+             */
 
-
-if (articleContent) {
-
-    let html = `
-        <p class="article-intro">
-            ${articleContent.intro}
-        </p>
-    `;
-
-
-    articleContent.sections.forEach(
-        function (section) {
-
-            html += `
-                <section class="article-section">
-
-                    <h2>
-                        ${section.title}
-                    </h2>
-            `;
-
-
-            section.paragraphs.forEach(
-                function (paragraph) {
-
-                    html += `
-                        <p>
-                            ${paragraph}
-                        </p>
-                    `;
-
-                }
+            renderArticle(
+                blog
             );
-
-
-            html += `
-                </section>
-            `;
 
         }
     );
 
 
-    content.innerHTML = html;
+    /*
+     * RENDER ARTICLE
+     */
 
-} else {
+    function renderArticle(
+        blog
+    ) {
 
-    content.innerHTML = `
-        <p>
-            ${blog.excerpt}
-        </p>
-    `;
+        const content =
+            document.getElementById(
+                "article-content"
+            );
 
-}
+
+        if (
+            typeof FAEZA_BLOG_CONTENT ===
+            "undefined"
+        ) {
 
             content.innerHTML = `
 
@@ -238,71 +261,190 @@ if (articleContent) {
                     ${blog.excerpt}
                 </p>
 
+            `;
+
+            console.warn(
+                "FAEZA_BLOG_CONTENT tidak ditemukan."
+            );
+
+            return;
+        }
+
+
+        const article =
+            FAEZA_BLOG_CONTENT[
+                blog.id
+            ];
+
+
+        /*
+         * BELUM ADA KONTEN DETAIL
+         */
+
+        if (!article) {
+
+            content.innerHTML = `
+
+                <p class="article-intro">
+                    ${blog.excerpt}
+                </p>
+
                 <h2>
-                    Informasi ${blog.title}
+                    Informasi Artikel
                 </h2>
 
                 <p>
-                    FaezaProject menghadirkan
-                    informasi yang membantu
-                    masyarakat mendapatkan
-                    referensi dan solusi sesuai
-                    kebutuhan.
-                </p>
-
-                <p>
-                    Pastikan Anda selalu
-                    menggunakan informasi dari
-                    sumber yang terpercaya dan
-                    melakukan pengecekan kembali
-                    sebelum mengambil keputusan.
+                    Artikel lengkap sedang
+                    dipersiapkan oleh
+                    FaezaProject.
                 </p>
 
             `;
 
-
-            /*
-             * WhatsApp
-             */
-
-            const whatsapp =
-                document.getElementById(
-                    "article-whatsapp"
-                );
+            return;
+        }
 
 
-            if (
-                whatsapp &&
-                window.FaezaWhatsApp
-            ) {
+        /*
+         * INTRO
+         */
 
-                whatsapp.addEventListener(
-                    "click",
-                    function (event) {
+        let html = `
 
-                        event.preventDefault();
+            <p class="article-intro">
+                ${article.intro}
+            </p>
 
-                        if (
-                            typeof
-                            window.FaezaWhatsApp.open ===
-                            "function"
-                        ) {
+        `;
 
-                            window.FaezaWhatsApp.open(
-                                "Assalamu'alaikum FaezaProject, " +
-                                "saya ingin berkonsultasi " +
-                                "mengenai artikel: " +
-                                blog.title
-                            );
 
-                        }
+        /*
+         * SECTION
+         */
+
+        if (
+            Array.isArray(
+                article.sections
+            )
+        ) {
+
+            article.sections.forEach(
+                function (section) {
+
+                    html += `
+
+                        <section
+                            class="article-section"
+                        >
+
+                            <h2>
+                                ${section.title}
+                            </h2>
+
+                    `;
+
+
+                    if (
+                        Array.isArray(
+                            section.paragraphs
+                        )
+                    ) {
+
+                        section.paragraphs.forEach(
+                            function (
+                                paragraph
+                            ) {
+
+                                html += `
+
+                                    <p>
+                                        ${paragraph}
+                                    </p>
+
+                                `;
+
+                            }
+                        );
 
                     }
-                );
 
-            }
+
+                    html += `
+
+                        </section>
+
+                    `;
+
+                }
+            );
 
         }
-    );
+
+
+        content.innerHTML =
+            html;
+
+    }
+
+
+    /*
+     * ERROR PAGE
+     */
+
+    function showError(
+        message
+    ) {
+
+        const title =
+            document.getElementById(
+                "article-title"
+            );
+
+        const category =
+            document.getElementById(
+                "article-category"
+            );
+
+        const content =
+            document.getElementById(
+                "article-content"
+            );
+
+
+        if (title) {
+
+            title.textContent =
+                "Artikel Tidak Ditemukan";
+
+        }
+
+
+        if (category) {
+
+            category.textContent =
+                "Blog";
+
+        }
+
+
+        if (content) {
+
+            content.innerHTML = `
+
+                <p>
+                    ${message}
+                </p>
+
+                <p>
+                    Silakan kembali ke
+                    halaman Blog dan pilih
+                    artikel lainnya.
+                </p>
+
+            `;
+
+        }
+
+    }
 
 })();
