@@ -4,26 +4,72 @@
    ========================================================= */
 
 (function () {
+
     "use strict";
+
 
     document.addEventListener(
         "DOMContentLoaded",
         function () {
+
 
             const blogGrid =
                 document.querySelector(
                     ".blog-grid"
                 );
 
+
+            /*
+             * Jika halaman tidak mempunyai
+             * blog grid, hentikan script.
+             */
+
             if (!blogGrid) {
                 return;
             }
 
 
-            function formatDate(dateString) {
+            /*
+             * Pastikan data blog tersedia.
+             */
+
+            if (
+                typeof FAEZA_BLOGS ===
+                "undefined"
+            ) {
+
+                console.error(
+                    "FAEZA_BLOGS tidak ditemukan."
+                );
+
+                return;
+            }
+
+
+            /*
+             * Format tanggal Indonesia
+             */
+
+            function formatDate(
+                dateString
+            ) {
 
                 const date =
-                    new Date(dateString);
+                    new Date(
+                        dateString
+                    );
+
+
+                if (
+                    Number.isNaN(
+                        date.getTime()
+                    )
+                ) {
+
+                    return dateString;
+
+                }
+
 
                 return date.toLocaleDateString(
                     "id-ID",
@@ -33,77 +79,282 @@
                         year: "numeric"
                     }
                 );
+
             }
 
+
+            /*
+             * Buat satu kartu blog
+             */
+
+            function createBlogCard(
+                blog
+            ) {
+
+                const article =
+                    document.createElement(
+                        "article"
+                    );
+
+
+                article.className =
+                    "blog-card";
+
+
+                article.dataset.blogId =
+                    blog.id;
+
+
+                /*
+                 * Image
+                 */
+
+                const imageWrapper =
+                    document.createElement(
+                        "div"
+                    );
+
+
+                imageWrapper.className =
+                    "blog-image";
+
+
+                const image =
+                    document.createElement(
+                        "img"
+                    );
+
+
+                image.src =
+                    blog.image;
+
+
+                image.alt =
+                    blog.title;
+
+
+                image.loading =
+                    "lazy";
+
+
+                /*
+                 * Jika gambar gagal
+                 * dimuat, tampilkan
+                 * placeholder.
+                 */
+
+                image.addEventListener(
+                    "error",
+                    function () {
+
+                        image.style.display =
+                            "none";
+
+                        imageWrapper.textContent =
+                            blog.category;
+
+                    }
+                );
+
+
+                imageWrapper.appendChild(
+                    image
+                );
+
+
+                /*
+                 * Content
+                 */
+
+                const content =
+                    document.createElement(
+                        "div"
+                    );
+
+
+                content.className =
+                    "blog-content";
+
+
+                /*
+                 * Category
+                 */
+
+                const category =
+                    document.createElement(
+                        "span"
+                    );
+
+
+                category.className =
+                    "blog-category";
+
+
+                category.textContent =
+                    blog.category;
+
+
+                /*
+                 * Date
+                 */
+
+                const date =
+                    document.createElement(
+                        "time"
+                    );
+
+
+                date.dateTime =
+                    blog.date;
+
+
+                date.textContent =
+                    formatDate(
+                        blog.date
+                    );
+
+
+                /*
+                 * Title
+                 */
+
+                const title =
+                    document.createElement(
+                        "h3"
+                    );
+
+
+                title.textContent =
+                    blog.title;
+
+
+                /*
+                 * Description
+                 */
+
+                const excerpt =
+                    document.createElement(
+                        "p"
+                    );
+
+
+                excerpt.textContent =
+                    blog.excerpt;
+
+
+                /*
+                 * Link
+                 */
+
+                const link =
+                    document.createElement(
+                        "a"
+                    );
+
+
+                link.href =
+                    "blog-detail.html?id=" +
+                    encodeURIComponent(
+                        blog.id
+                    );
+
+
+                link.textContent =
+                    "Baca selengkapnya";
+
+
+                /*
+                 * Gabungkan content
+                 */
+
+                content.appendChild(
+                    category
+                );
+
+                content.appendChild(
+                    date
+                );
+
+                content.appendChild(
+                    title
+                );
+
+                content.appendChild(
+                    excerpt
+                );
+
+                content.appendChild(
+                    link
+                );
+
+
+                /*
+                 * Gabungkan card
+                 */
+
+                article.appendChild(
+                    imageWrapper
+                );
+
+                article.appendChild(
+                    content
+                );
+
+
+                return article;
+
+            }
+
+
+            /*
+             * Render semua artikel
+             */
 
             function renderBlogs() {
 
+                /*
+                 * Kosongkan blog grid
+                 * agar kartu lama dari
+                 * index.html tidak double.
+                 */
+
                 blogGrid.innerHTML =
-                    FAEZA_BLOGS
-                        .map(function (blog) {
+                    "";
 
-                            return `
-                                <article
-                                    class="blog-card"
-                                    data-blog-id="${blog.id}"
-                                >
 
-                                    <div class="blog-image">
+                FAEZA_BLOGS.forEach(
+                    function (blog) {
 
-                                        ${
-                                            blog.image
-                                            ? `
-                                                <img
-                                                    src="${blog.image}"
-                                                    alt="${blog.title}"
-                                                    loading="lazy"
-                                                >
-                                            `
-                                            : `
-                                                <span>
-                                                    ${blog.category}
-                                                </span>
-                                            `
-                                        }
+                        const card =
+                            createBlogCard(
+                                blog
+                            );
 
-                                    </div>
 
-                                    <div class="blog-content">
+                        blogGrid.appendChild(
+                            card
+                        );
 
-                                        <span class="blog-category">
-                                            ${blog.category}
-                                        </span>
+                    }
+                );
 
-                                        <time
-                                            datetime="${blog.date}"
-                                        >
-                                            ${formatDate(blog.date)}
-                                        </time>
 
-                                        <h3>
-                                            ${blog.title}
-                                        </h3>
+                /*
+                 * Debug sederhana
+                 */
 
-                                        <p>
-                                            ${blog.excerpt}
-                                        </p>
+                console.log(
+                    "FaezaProject Blog:",
+                    FAEZA_BLOGS.length,
+                    "artikel berhasil ditampilkan."
+                );
 
-                                        <a
-                                            href="${blog.url}"
-                                            data-blog="${blog.id}"
-                                        >
-                                            Baca selengkapnya
-                                        </a>
-
-                                    </div>
-
-                                </article>
-                            `;
-
-                        })
-                        .join("");
             }
 
+
+            /*
+             * Jalankan
+             */
 
             renderBlogs();
 
