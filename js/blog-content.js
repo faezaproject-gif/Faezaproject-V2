@@ -284,4 +284,191 @@ const FAEZA_BLOG_CONTENT = {
 
     }
 
+   "memilih-jasa": {
+
+    intro:
+        "Memilih jasa profesional membutuhkan pertimbangan yang tepat agar kebutuhan project dapat dikerjakan dengan hasil yang baik, jelas, dan sesuai kesepakatan.",
+
+    sections: [
+
+        {
+            title:
+                "Tentukan Kebutuhan Anda",
+
+            paragraphs: [
+
+                "Sebelum memilih penyedia jasa, tentukan terlebih dahulu pekerjaan yang ingin dilakukan.",
+
+                "Jelaskan kebutuhan secara rinci agar penyedia jasa dapat memahami pekerjaan dan memberikan solusi yang sesuai."
+
+            ]
+        },
+
+        {
+            title:
+                "Perhatikan Pengalaman",
+
+            paragraphs: [
+
+                "Pengalaman menjadi salah satu pertimbangan penting ketika memilih jasa profesional.",
+
+                "Portofolio pekerjaan sebelumnya dapat membantu Anda melihat kualitas dan kemampuan penyedia jasa."
+
+            ]
+        },
+
+        {
+            title:
+                "Pastikan Komunikasi Jelas",
+
+            paragraphs: [
+
+                "Komunikasi yang baik membantu menghindari kesalahpahaman selama proses pengerjaan.",
+
+                "Pastikan ruang lingkup pekerjaan, waktu pengerjaan, material, dan biaya sudah dibicarakan sejak awal."
+
+            ]
+        },
+
+        {
+            title:
+                "Pilih Solusi yang Tepat",
+
+            paragraphs: [
+
+                "FaezaProject berkomitmen membantu pelanggan menemukan solusi yang sesuai dengan kebutuhan project.",
+
+                "Konsultasikan kebutuhan Anda terlebih dahulu agar solusi yang dipilih benar-benar sesuai."
+
+            ]
+        }
+
+    ]
+},
+
+
+"inspirasi-project": {
+
+    intro:
+        "Setiap project dimulai dari sebuah kebutuhan dan ide. Dengan perencanaan yang baik, sebuah kebutuhan dapat dikembangkan menjadi project yang memberikan manfaat nyata.",
+
+    sections: [
+
+        {
+            title:
+                "Mulai dari Sebuah Ide",
+
+            paragraphs: [
+
+                "Ide project dapat berasal dari kebutuhan pribadi, keluarga, bisnis, organisasi, maupun instansi.",
+
+                "Tidak semua ide harus langsung dikerjakan dalam skala besar. Project dapat dimulai dari langkah sederhana."
+
+            ]
+        },
+
+        {
+            title:
+                "Susun Konsep",
+
+            paragraphs: [
+
+                "Konsep membantu menentukan arah project agar proses pengerjaan lebih terstruktur.",
+
+                "Tentukan tujuan, kebutuhan utama, anggaran, waktu, dan hasil akhir yang diharapkan."
+
+            ]
+        },
+
+        {
+            title:
+                "Kerjakan Secara Bertahap",
+
+            paragraphs: [
+
+                "Project yang besar dapat dibagi menjadi beberapa tahap agar lebih mudah dikontrol.",
+
+                "Dengan pembagian tahap yang jelas, proses evaluasi dan pengembangan juga menjadi lebih mudah."
+
+            ]
+        },
+
+        {
+            title:
+                "Wujudkan Menjadi Solusi",
+
+            paragraphs: [
+
+                "FaezaProject hadir untuk membantu mengubah kebutuhan dan ide menjadi solusi yang dapat dikerjakan secara profesional.",
+
+                "Mulai dari konsultasi, perencanaan, pengerjaan hingga penyelesaian project."
+
+            ]
+        }
+
+    ]
+},
+
+
+"tips-memilih-jasa": {
+
+    intro:
+        "Memilih penyedia jasa yang tepat dapat membantu project berjalan lebih efektif, efisien, dan sesuai dengan kebutuhan.",
+
+    sections: [
+
+        {
+            title:
+                "Bandingkan Layanan",
+
+            paragraphs: [
+
+                "Jangan hanya melihat harga ketika memilih jasa.",
+
+                "Bandingkan jenis layanan, pengalaman, kualitas pekerjaan, komunikasi, dan dukungan setelah pekerjaan selesai."
+
+            ]
+        },
+
+        {
+            title:
+                "Tanyakan Detail Pekerjaan",
+
+            paragraphs: [
+
+                "Pastikan Anda memahami apa saja yang termasuk dalam layanan.",
+
+                "Tanyakan material, durasi pengerjaan, jumlah tenaga kerja, garansi apabila tersedia, dan ketentuan pembayaran."
+
+            ]
+        },
+
+        {
+            title:
+                "Perhatikan Transparansi Harga",
+
+            paragraphs: [
+
+                "Harga yang jelas sejak awal membantu menghindari munculnya biaya yang tidak diperkirakan.",
+
+                "Mintalah penawaran yang menjelaskan ruang lingkup pekerjaan dan komponen biaya secara jelas."
+
+            ]
+        },
+
+        {
+            title:
+                "Konsultasikan Kebutuhan",
+
+            paragraphs: [
+
+                "Jika masih ragu, lakukan konsultasi terlebih dahulu sebelum menentukan pilihan.",
+
+                "FaezaProject siap membantu menghubungkan kebutuhan Anda dengan solusi yang sesuai."
+
+            ]
+        }
+
+    ]
+}
 };
