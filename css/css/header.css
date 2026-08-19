@@ -1,0 +1,208 @@
+/* =========================================================
+   FAEZAPROJECT V2
+   HEADER / NAVIGATION
+   ========================================================= */
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: var(--z-header);
+    width: 100%;
+    background: rgba(255, 255, 255, 0.96);
+    border-bottom: 1px solid var(--color-border);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+.header-inner {
+    min-height: 76px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-6);
+}
+
+
+/* =========================================================
+   BRAND
+   ========================================================= */
+
+.brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+.brand-symbol {
+    width: 42px;
+    height: 42px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: var(--color-primary);
+    color: var(--color-accent-light);
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.brand-name {
+    color: var(--color-primary);
+    font-size: 1.12rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+}
+
+
+/* =========================================================
+   DESKTOP NAVIGATION
+   ========================================================= */
+
+.main-navigation {
+    display: flex;
+    align-items: center;
+    gap: 26px;
+}
+
+.main-navigation a {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    color: var(--color-primary);
+    font-size: 0.92rem;
+    font-weight: 600;
+    transition:
+        color var(--transition-normal);
+}
+
+.main-navigation a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 4px;
+    width: 0;
+    height: 2px;
+    background: var(--color-accent);
+    transition:
+        width var(--transition-normal);
+}
+
+.main-navigation a:hover {
+    color: var(--color-accent-dark);
+}
+
+.main-navigation a:hover::after {
+    width: 100%;
+}
+
+
+/* =========================================================
+   MOBILE MENU BUTTON
+   ========================================================= */
+
+.menu-toggle {
+    width: 44px;
+    height: 44px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+    padding: 8px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    background: var(--white);
+}
+
+.menu-toggle span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    border-radius: 2px;
+    background: var(--color-primary);
+    transition:
+        transform var(--transition-normal),
+        opacity var(--transition-normal);
+}
+
+
+/* =========================================================
+   FUTURE JS STATE
+   ========================================================= */
+
+.site-header.menu-open .menu-toggle span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.site-header.menu-open .menu-toggle span:nth-child(2) {
+    opacity: 0;
+}
+
+.site-header.menu-open .menu-toggle span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+
+/* =========================================================
+   HEADER RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .main-navigation {
+        gap: 18px;
+    }
+
+    .main-navigation a {
+        font-size: 0.88rem;
+    }
+
+}
+
+
+@media (max-width: 760px) {
+
+    .header-inner {
+        min-height: 68px;
+    }
+
+    .menu-toggle {
+        display: inline-flex;
+    }
+
+    .main-navigation {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 10px 16px 18px;
+        background: var(--white);
+        border-bottom: 1px solid var(--color-border);
+        box-shadow: var(--shadow-md);
+    }
+
+    .site-header.menu-open .main-navigation {
+        display: flex;
+    }
+
+    .main-navigation a {
+        min-height: 48px;
+        padding: 10px 4px;
+        border-bottom: 1px solid var(--color-border);
+    }
+
+    .main-navigation a:last-child {
+        border-bottom: 0;
+    }
+
+    .main-navigation a::after {
+        display: none;
+    }
+
+}
